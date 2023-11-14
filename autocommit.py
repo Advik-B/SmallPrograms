@@ -14,13 +14,14 @@ status_output = subprocess.run(
 if status_output.stdout:
     for line in status_output.stdout.splitlines():
 
+
         # Get the filename
         filename = line[3:].decode('utf-8')
         # Status of the file
         status = line[:2].decode('utf-8')
         # Add the file to the staging area
         # subprocess.run(['git', 'add', filename])
-
+        print(filename)
         status = status.strip()
         # Convert the status to a human readable format
 
