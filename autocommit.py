@@ -21,7 +21,6 @@ if status_output.stdout:
         status = line[:2].decode('utf-8')
         # Add the file to the staging area
         # subprocess.run(['git', 'add', filename])
-        print(filename)
         status = status.strip()
         # Convert the status to a human readable format
 
