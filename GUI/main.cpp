@@ -2,6 +2,7 @@
 #include <glm/glm.hpp>
 #include <random>
 
+
 //#define CHANGE_VELOCITY_ON_WALLHIT
 
 #include "physicsEngine.cpp"
@@ -39,7 +40,7 @@ int main() {
     std::uniform_real_distribution<float> distribution(-180.0f, 180.0f);
     float initialDirection = distribution(rng); // Random initial rotation
 
-    PhysicsEngine pEngine(0.0f, 0.0f, 0.5f, 0.5f, 0.8f, initialDirection);
+    PhysicsEngine pEngine(0.0f, 0.0f, 0.5f, 0.5f, 0.7f, initialDirection);
 
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
@@ -50,6 +51,7 @@ int main() {
 
         glfwSwapBuffers(window);
         glfwPollEvents();
+
     }
 
     glfwTerminate();
