@@ -1,6 +1,6 @@
 # Makes my commits look like I'm working hard
 import subprocess
-
+import os
 # Run git reset to unstage any files
 subprocess.run(['git', 'reset'], stdout=subprocess.PIPE, shell=True)
 
@@ -41,6 +41,9 @@ if status_output.stdout:
             filestatus = 'untracked'
         else:
             filestatus = "?"
+
+        if os.path.isdir(filename):
+            continue
         # Commit the file
         subprocess.run(['git', 'add', filename])
         subprocess.run(['git', 'commit', '-m', f'{filestatus}: {filename}'])
